@@ -9,7 +9,7 @@ class Host:
         print(f"Host {self.name}: running '{cmd}'")
         run_cmd_on_vm_host(f"ssh -t {self.name} '{cmd}'")
 
-    def set_interface_address(self, interace, address, cdir="/24"):
+    def add_interface_address(self, interace, address, cdir="/24"):
         self.run(f"ip addr add {address}{cdir} dev {interace}")
 
     def set_interface_up(self, interace):

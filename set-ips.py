@@ -4,28 +4,28 @@ prefix = "10.153.211"
 
 addresses = {
     "router1": {
-        "eth1": f"{prefix}.011",
-        "eth2": f"{prefix}.012",
-        "eth3": f"{prefix}.013",
-        "eth4": f"{prefix}.014",
+        "eth1": f"{prefix}.211",
+        "eth2": f"{prefix}.212",
+        "eth3": f"{prefix}.213",
+        "eth4": f"{prefix}.214",
     },
     "router2": {
-        "eth1": f"{prefix}.021",
-        "eth2": f"{prefix}.022",
-        "eth3": f"{prefix}.023",
-        "eth4": f"{prefix}.024",
+        "eth1": f"{prefix}.221",
+        "eth2": f"{prefix}.222",
+        "eth3": f"{prefix}.223",
+        "eth4": f"{prefix}.224",
     },
     "router3": {
-        "eth1": f"{prefix}.031",
-        "eth2": f"{prefix}.032",
-        "eth3": f"{prefix}.033",
-        "eth4": f"{prefix}.034",
+        "eth1": f"{prefix}.231",
+        "eth2": f"{prefix}.232",
+        "eth3": f"{prefix}.233",
+        "eth4": f"{prefix}.234",
     },
     "router4": {
-        "eth1": f"{prefix}.041",
-        "eth2": f"{prefix}.042",
-        "eth3": f"{prefix}.043",
-        "eth4": f"{prefix}.044",
+        "eth1": f"{prefix}.241",
+        "eth2": f"{prefix}.242",
+        "eth3": f"{prefix}.243",
+        "eth4": f"{prefix}.244",
     },
     "pc1": {
         "eth1": f"{prefix}.111",
@@ -40,5 +40,5 @@ addresses = {
 
 for host in hosts.values():
     for interface, address in addresses[host.name].items():
-        host.set_interface_address(interface, address)
+        host.add_interface_address(interface, address)
         host.set_interface_up(interface)
