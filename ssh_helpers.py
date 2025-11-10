@@ -12,8 +12,11 @@ class Host:
     def add_interface_address(self, interace, address, cdir="/24"):
         self.run(f"ip addr add {address}{cdir} dev {interace}")
 
-    def set_interface_up(self, interace):
-        self.run(f"ip link set dev {interace} up")
+    def set_interface_up(self, interface):
+        self.set_interface(interface, "up")
+
+    def set_interface(self, interface, state="up"):
+        self.run(f"ip link set dev {interface} {state}")
 
 
 def run_cmd_on_vm_host(cmd):
