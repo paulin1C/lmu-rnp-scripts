@@ -38,7 +38,9 @@ addresses = {
     },
 }
 
-for host in hosts.values():
-    for interface, address in addresses[host.name].items():
-        host.add_interface_address(interface, address)
-        host.set_interface_up(interface)
+
+if __name__ == "__main__":
+    for host in hosts.values():
+        for interface, address in addresses[host.name].items():
+            host.add_interface_address(interface, address)
+            host.set_interface_up(interface)
