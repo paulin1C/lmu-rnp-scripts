@@ -9,8 +9,7 @@ all other interfaces on the host will not be usable until configured with set_vl
 """
 
 
-def setup_bridge(host, internal_interfaces, bridge_name="br0", cleanup=True):
-    host.cleanup_bridges()
+def setup_bridge(host, internal_interfaces, bridge_name="br0"):
     host.run(
         f"ip link add name {bridge_name} type bridge vlan_filtering 1 vlan_default_pvid 0"
     )
