@@ -18,6 +18,10 @@ class Host:
     def set_interface(self, interface, state="up"):
         self.run(f"ip link set dev {interface} {state}")
 
+    def cleanup_bridges(self, bridge_names=["brr", "br0"]):
+        for bridge in bridge_names:
+            self.run(f"ip link del dev {bridge}")
+
 
 def run_cmd_on_vm_host(cmd):
     os.system(f"ssh -t rnp-cip '{cmd}'")
